@@ -34,6 +34,7 @@ import spotify from "../assets/spotify.png";
 import XD from "../assets/XD.png";
 import mongodb from "../assets/mongodb.png";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   email,
   mobile,
