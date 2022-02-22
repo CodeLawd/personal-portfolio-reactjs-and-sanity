@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# Personal Portfolio Project Built with Reactjs, SCSS and Sanity
+
+This is my personal portfolio. This portfolio is a full stack app built using my knowledge of React, Sass and Sanity.io (unified content platform that powers better digital experiences).
+>>>>>>> 8b348d13bef3ed3c5633ba105a319598255ae508
