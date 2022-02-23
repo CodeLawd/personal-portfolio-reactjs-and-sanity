@@ -2,6 +2,7 @@
   flex: 1;
   width: 100%;
   flex-direction: column;
+  background-color: #fff;
 }
 
 .app__profiles {
@@ -13,7 +14,7 @@
 }
 
 .app__profile-item {
-  width:300px;
+  width: 300px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;

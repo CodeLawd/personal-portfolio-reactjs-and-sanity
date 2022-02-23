@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import moment from "moment";
 
-import { AppWrap } from "../../wrapper";
+import { AppWrap, MotionWrap } from "../../wrapper";
 import "./Articles.scss";
 
 const Articles = () => {
@@ -95,4 +95,8 @@ const Articles = () => {
   );
 };
 
-export default AppWrap(Articles, "articles");
+export default AppWrap(
+  MotionWrap(Articles, "app__skills"),
+  "articles",
+  "app__whitebg"
+);

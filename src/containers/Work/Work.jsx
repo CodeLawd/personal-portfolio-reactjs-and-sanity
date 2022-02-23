@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
-import { AppWrap } from "../../wrapper";
+import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 
 import "./Work.scss";
@@ -111,7 +111,11 @@ const Work = () => {
               <h4 className="bold-text">{work.title}</h4>
               <p
                 className="p-text"
-                style={{ marginTop: 10, fontSize: ".95rem", textAlign: "justify" }}
+                style={{
+                  marginTop: 10,
+                  fontSize: ".95rem",
+                  textAlign: "justify",
+                }}
               >
                 {work.description}
               </p>
@@ -133,4 +137,8 @@ const Work = () => {
   );
 };
 
-export default AppWrap(Work, "work");
+export default AppWrap(
+  MotionWrap(Work, "app__works"),
+  "work",
+  "app__primarybg"
+);
