@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
-import { client, clint, urlFor } from "../../client";
+import { client, urlFor } from "../../client";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 import "./Testimonial.scss";
