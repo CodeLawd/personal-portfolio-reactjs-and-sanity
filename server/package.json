@@ -8,7 +8,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
-    "build": "sanity build"
+    "build": "sanity build",
+    "delete": "sanity documents query '*[_type == 'myDocument'][0...20]._id' | groq '*' -o ndjson | xargs sanity documents delete"
   },
   "keywords": [
     "sanity"
