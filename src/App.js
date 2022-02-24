@@ -6,6 +6,7 @@ import {
   Testimonial,
   Work,
   Articles,
+  Credit,
 } from "./containers";
 
 import { Navbar } from "./components";
@@ -23,6 +24,7 @@ const App = () => {
       <Testimonial />
       <Articles />
       <Footer />
+      <Credit />
     </div>
   );
 };

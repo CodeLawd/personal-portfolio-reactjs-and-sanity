@@ -1,0 +1,28 @@
+.app__credit {
+  padding: 1rem 2rem;
+  margin: 0 auto;
+
+  .app__social {
+    display: none;
+
+    @media screen and (max-width: 450px) {
+      display: flex;
+      flex-direction: row !important;
+
+      p {
+        margin-left: 150px;
+      }
+
+      div {
+        margin: 0 0.5rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    margin: -5px 0;
+    p {
+      margin-left: 50px;
+    }
+  }
+}
