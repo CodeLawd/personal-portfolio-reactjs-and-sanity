@@ -87,6 +87,18 @@
       width: 100%;
       text-align: center;
     }
+
+    @media screen and (max-width: 450px) {
+      padding: 0.5rem 1rem;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
   }
 
   .tag-cmp {
@@ -105,6 +117,14 @@
       &:hover {
         transform: scale(1.08);
         color: var(--black-color);
+      }
+    }
+
+    @media screen and (max-width: 450px) {
+      margin-top: 1rem;
+      p {
+        font-size: 0.9rem;
+        line-height: 25px;
       }
     }
   }
@@ -180,6 +200,18 @@
 
   div:nth-child(6) {
     margin-left: 5rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    div:nth-child(5),
+    div:nth-child(4),
+    div:nth-child(3),
+    div:nth-child(2),
+    div:nth-child(1) {
+      width: 52px;
+      height: 52px;
+      margin: 0.3rem
+    }
   }
 
   @media screen and (min-width: 2000px) {
