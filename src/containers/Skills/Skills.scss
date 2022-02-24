@@ -36,9 +36,7 @@
 .app__skills-item {
   flex-direction: column;
   text-align: center;
-
   margin: 1rem;
-
   transition: all 0.3s ease-in-out;
 
   div {
@@ -47,13 +45,15 @@
     border-radius: 50%;
     background-color: #fef4f5;
 
+    &:hover {
+      box-shadow: 0 0 25px #fef4f5;
+      transform: translateY(-10px);
+      transition: all 0.3s ease-in-out;
+    }
+
     img {
       width: 50%;
       height: 50%;
-    }
-
-    &:hover {
-      box-shadow: 0 0 25px #fef4f5;
     }
 
     @media screen and (min-width: 2000px) {
@@ -115,12 +115,14 @@
 
     h4 {
       font-weight: 500;
+      font-size: 1.2rem;
     }
 
     p {
       font-weight: 400;
       color: var(--gray-color);
       margin-top: 5px;
+      font-size: 1rem;
     }
   }
 }

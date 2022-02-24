@@ -33,6 +33,7 @@ import skype from "../assets/skype.png";
 import spotify from "../assets/spotify.png";
 import XD from "../assets/XD.png";
 import mongodb from "../assets/mongodb.png";
+import loader from "../assets/loader.gif";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -71,4 +72,5 @@ export default {
   spotify,
   XD,
   mongodb,
+  loader,
 };

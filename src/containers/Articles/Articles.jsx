@@ -98,5 +98,5 @@ const Articles = () => {
 export default AppWrap(
   MotionWrap(Articles, "app__skills"),
   "articles",
-  "app__whitebg"
+  "app__otherbg"
 );

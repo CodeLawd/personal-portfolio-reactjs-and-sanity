@@ -11,6 +11,10 @@
   background-color: var(--primary-color);
 }
 
+.app__otherbg {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
 .app__container {
   width: 100%;
   min-height: 100vh;
@@ -108,11 +112,11 @@
   div {
     width: 40px;
     height: 40px;
-    // border-radius: 50%;
+    border-radius: 50%;
     background-color: var(--white-color);
     margin: 0.25rem 0;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+    border: 1px solid var(--lightGray-color);
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,13 +124,13 @@
     transition: all 0.3s ease-in-out;
 
     svg {
-      width: 20px;
-      height: 20px;
-      color: hsl(207, 80%, 38%);
+      width: 18px;
+      height: 18px;
+      color: var(--gray-color);
     }
 
     &:hover {
-      background-color: hsl(207, 80%, 38%);
+      background-color: var(--secondary-color);
       border-color: var(--secondary-color);
 
       svg {
