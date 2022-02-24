@@ -9,7 +9,7 @@ const Credit = () => {
 
   return (
     <footer className="app__credit">
-      <p className="p-text">&copy; {date} CodeLawd. All Right Reserved</p>
+      <p className="p-text">&copy; {date} CodeLawd. All Right Reserved.</p>
       <div>
         <SocialMedia />
       </div>
