@@ -9,6 +9,7 @@ const Articles = () => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
+    let cancel = false;
     const gql = async (query, variables = {}) => {
       const data = await fetch("https://api.hashnode.com/", {
         method: "POST",
@@ -44,9 +45,14 @@ const Articles = () => {
           }
       `;
 
-    gql(GET_USER_ARTICLES, { page: 0 }).then((result) =>
-      setArticles(result.data.user.publication.posts)
-    );
+    gql(GET_USER_ARTICLES, { page: 0 }).then((result) => {
+      if (cancel) return;
+      setArticles(result.data.user.publication.posts);
+    });
+
+    return () => {
+      cancel = true;
+    };
   }, []);
 
   return (

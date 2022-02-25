@@ -11,16 +11,23 @@ const Skills = () => {
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
+    let cancel = false;
     const query = '*[_type == "experiences"]';
     const skillsQuery = '*[_type == "skills"]';
 
     client.fetch(query).then((data) => {
+      if (cancel) return;
       setExperiences(data);
     });
 
     client.fetch(skillsQuery).then((data) => {
+      if (cancel) return;
       setSkills(data);
     });
+
+    return () => {
+      cancel = true;
+    };
   }, []);
 
   return (
@@ -32,14 +39,16 @@ const Skills = () => {
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
-              key={skill + index}
+              key={index}
               className="app__skills-item app__flex"
             >
               <div
                 className="app__flex"
                 style={{ backgroundColor: skill.bgColor }}
               >
-                <img src={urlFor(skill.icon)} alt={skill.name} />
+                {skill.icon && (
+                  <img src={urlFor(skill.icon)} alt={skill.name} />
+                )}
               </div>
               <p className="p-text">{skill.name}</p>
             </motion.div>

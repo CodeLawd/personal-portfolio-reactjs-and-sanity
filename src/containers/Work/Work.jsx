@@ -13,21 +13,18 @@ const Work = () => {
   const [filterWork, setFilterWork] = useState([]);
 
   useEffect(() => {
+    let cancel = false;
     const query = '*[_type == "works"]';
 
-    const clientQuery = async () => {
-      try {
-        const data = await client.fetch(query);
-        if (data) {
-          setWorks(data);
-          setFilterWork(data);
-        }
-      } catch (err) {
-        console.log(err.message);
-      }
-    };
+    client.fetch(query).then((data) => {
+      if (cancel) return;
+      setWorks(data);
+      setFilterWork(data);
+    });
 
-    clientQuery();
+    return () => {
+      cancel = true;
+    };
   }, []);
 
   const handleWorkFilter = (item) => {
@@ -121,7 +118,7 @@ const Work = () => {
               </p>
 
               <div className="app__work-stack app__flex">
-                {work.stack.map((stack, i) => (
+                {work.stack?.map((stack, i) => (
                   <div key={i}>{stack}</div>
                 ))}
               </div>

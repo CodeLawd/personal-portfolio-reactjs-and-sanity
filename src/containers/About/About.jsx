@@ -10,17 +10,15 @@ const About = () => {
   const [abouts, setAbouts] = useState([]);
 
   useEffect(() => {
+    let cancel = false;
     const query = "*[_type == 'abouts']";
-    const clientQuery = async () => {
-      try {
-        const data = await client.fetch(query);
-        setAbouts(data);
-      } catch (err) {
-        console.log(err.message);
-      }
-    };
 
-    clientQuery();
+    client.fetch(query).then((data) => {
+      if (cancel) return;
+      setAbouts(data);
+    });
+
+    return () => (cancel = true);
   }, []);
 
   return (
@@ -40,7 +38,7 @@ const About = () => {
               className="app__profile-item"
               key={about.title + index}
             >
-              <img src={urlFor(about.imgUrl)} alt="" />
+              {about.imgUrl && <img src={urlFor(about.imgUrl)} alt="about" />}
               <h2 className="bold-text" style={{ marginTop: 20 }}>
                 {about.title}
               </h2>

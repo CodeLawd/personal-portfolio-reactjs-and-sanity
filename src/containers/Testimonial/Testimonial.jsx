@@ -13,16 +13,21 @@ const Testimonial = () => {
   const [brands, setBrands] = useState([]);
 
   useEffect(() => {
+    let cancel = false;
     const query = '*[_type == "testimonials"]';
     const brandQuery = '*[_type == "brands"]';
 
     client.fetch(query).then((data) => {
+      if (cancel) return;
       setTestimonials(data);
     });
 
     client.fetch(brandQuery).then((data) => {
+      if (cancel) return;
       setBrands(data);
     });
+
+    return () => (cancel = true);
   }, []);
 
   const test = testimonials[currentIndex];
@@ -39,7 +44,7 @@ const Testimonial = () => {
       {testimonials.length && (
         <>
           <div className="app__flex app__testimonial-item">
-            <img src={urlFor(test.imgUrl)} alt="testimonial" />
+            {test.imgUrl && <img src={urlFor(test.imgUrl)} alt="testimonial" />}
 
             <div className="app__testimonial-content">
               <p className="p-text">{test.feedback}</p>
@@ -87,7 +92,9 @@ const Testimonial = () => {
             transition={{ duration: 0.5, type: "tween" }}
             key={brand._id}
           >
-            <img src={urlFor(brand.imgUrl)} alt={brand.name} />
+            {brand.imgUrl && (
+              <img src={urlFor(brand.imgUrl)} alt={brand.name} />
+            )}
           </motion.div>
         ))}
       </div>
