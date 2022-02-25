@@ -123,9 +123,9 @@ const Work = () => {
                 ))}
               </div>
 
-              <div className="app__work-tag app__flex">
+              {/* <div className="app__work-tag app__flex">
                 <p className="p-text">All</p>
-              </div>
+              </div> */}
             </div>
           </div>
         ))}
