@@ -65,7 +65,7 @@ const Articles = () => {
           articles.map((article, index) => (
             <motion.div
               whileInView={{ opacity: 1 }}
-              whileHover={{ scale: 1.1 }}
+              // whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.5, type: "tween" }}
               className="app__article-item"
               key={article.title + index}
