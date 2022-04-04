@@ -43,7 +43,6 @@ const Articles = () => {
       `;
 
     gql(GET_USER_ARTICLES, { page: 0 }).then((result) => {
-      console.log(result);
       if (cancel) return;
       setArticles(result.data.user.publication.posts);
     });
