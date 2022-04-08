@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 
 import { images } from "../../constants";
 import { AppWrap } from "../../wrapper";
+import { FiDownload } from "react-icons/fi";
+import file from "../../Joshua CV - SD.pdf";
 
 import "./Header.scss";
 
@@ -39,6 +41,12 @@ const Header = () => {
             <p className="p-text">UI/UX Designer</p>
             <p className="p-text">Instructor</p>
           </div>
+          <div className="resume app__flex">
+            <a href={file}>
+              {" "}
+              <FiDownload /> Download Resume{" "}
+            </a>
+          </div>
         </div>
       </motion.div>
 
@@ -62,17 +70,13 @@ const Header = () => {
         whileInView={scaleVariants.whileInView}
         className="app__header-circles"
       >
-        {[
-          images.react,
-          images.node,
-          images.vue,
-          images.mongodb,
-          images.XD,
-        ].map((circle, index) => (
-          <div key={`circle-${index}`} className="circle-cmp app_flex">
-            <img src={circle} alt="circle" />
-          </div>
-        ))}
+        {[images.react, images.node, images.vue, images.mongodb, images.XD].map(
+          (circle, index) => (
+            <div key={`circle-${index}`} className="circle-cmp app_flex">
+              <img src={circle} alt="circle" />
+            </div>
+          )
+        )}
       </motion.div>
     </header>
   );

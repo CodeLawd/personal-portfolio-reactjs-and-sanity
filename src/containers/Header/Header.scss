@@ -66,7 +66,6 @@
     border-radius: 15px;
     flex-direction: row;
     width: auto;
-
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   }
 
@@ -148,6 +147,37 @@
   @media screen and (max-width: 1200px) {
     justify-content: flex-start;
     align-items: flex-start;
+  }
+
+  .resume {
+    background-color: var(--secondary-color);
+    // border: 2px solid var(--gray-color);
+    padding: 15px 25px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    &:hover {
+      background-color: #fff;
+      transition: all 0.5s ease-out;
+      cursor: pointer;
+
+      a {
+        color: var(--secondary-color);
+      }
+    }
+
+    @media screen and (max-width: 450px) {
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto 0;
+    }
   }
 }
 
